@@ -35,6 +35,7 @@ const routes: Route[] = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
