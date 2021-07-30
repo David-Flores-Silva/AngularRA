@@ -1,3 +1,4 @@
+import { RouterModule, Route } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +13,14 @@ import { UserComponent } from './user/user.component';
 import { DataService } from './data.service';
 import { AboutComponent } from './about/about.component';
 import { HelloComponent } from './hello/hello.component';
+
+
+const routes: Route[] = [
+  {path: "", component: AppComponent },
+  {path: "", component: HelloWorldComponent },
+  {path: "", component: AboutComponent },
+  {path: "", component: HelloComponent },
+]
 
 @NgModule({
   declarations: [
