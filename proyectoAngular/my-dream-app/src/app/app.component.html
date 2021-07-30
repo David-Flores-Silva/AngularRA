@@ -34,3 +34,12 @@
     <app-user [nameUser]="user"></app-user>
   </li>
 </ul>
+
+<button (click)="sayHello()"> hazme click </button>
+
+<h1>Desde app.component</h1>
+<ul>
+  <li *ngFor = "let user of users">
+    {{user}} <button (click)="deleteUser(user)"> Borrar user </button>
+  </li>
+</ul>
