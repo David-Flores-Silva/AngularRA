@@ -59,12 +59,16 @@ export class AppComponent {
     newUser.focus();
     return false;
     
-  }
+  } 
+
+  posts = [];
+  
   /* constructor(private dataService: DataService) {
     this.dataService.getData().subscribe(data=>{
-      console.log(data);
+      //console.log(data);
+      
     });
-  } */ 
+  }  */
 
 }
 
