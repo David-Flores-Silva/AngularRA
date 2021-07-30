@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 
+import { DataService } from './data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  name2 : string = "David Flores Silva";
+  age : number = 23;
+
   users = ["ryan", "joe", "cameron", "jhon"];
   activated = false;
 
@@ -24,6 +29,7 @@ export class AppComponent {
     this.hobbys = ["futbol", "tenis", "pin-pon"];
     this.showHobbies = false;
   }
+  
 
   toggleHobbies(){
     this.showHobbies = !this.showHobbies;
@@ -54,6 +60,12 @@ export class AppComponent {
     return false;
     
   }
+  /* constructor(private dataService: DataService) {
+    this.dataService.getData().subscribe(data=>{
+      console.log(data);
+    });
+  } */ 
+
 }
 
 

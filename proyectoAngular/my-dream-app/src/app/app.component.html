@@ -25,8 +25,6 @@
   <input #hobby type = "text" placeholder="hobby">
 </form>
 
-
-
 <app-hello-world>estamos aqui</app-hello-world>
 
 <ul>
@@ -44,8 +42,16 @@
   </li>
 </ul>
 
-
 <form (submit)="addUser(newUser)">
   <input type = "text" #newUser>
   <button> Agregar Usuario </button>
 </form>
+
+<div >
+  <form (submit)="addUser(newUser)">
+    <input type = "text" name="name2" [(ngModel)]="name2">
+    <input type = "text" name="age" [(ngModel)]="age"> 
+  </form>
+  <h1>Name: {{name2}}</h1>
+  <h1>Age: {{age}}</h1>
+</div>
