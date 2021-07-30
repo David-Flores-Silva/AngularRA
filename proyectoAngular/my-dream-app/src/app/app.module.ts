@@ -17,9 +17,9 @@ import { HelloComponent } from './hello/hello.component';
 
 const routes: Route[] = [
   {path: "", component: AppComponent },
-  {path: "", component: HelloWorldComponent },
-  {path: "", component: AboutComponent },
-  {path: "", component: HelloComponent },
+  {path: "helloWorld", component: HelloWorldComponent },
+  {path: "about", component: AboutComponent },
+  {path: "hello", component: HelloComponent },
 ]
 
 @NgModule({

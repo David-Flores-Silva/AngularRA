@@ -1,12 +1,5 @@
 <router-outlet></router-outlet>
 
-<div class="black">
-  <h1> {{title}} </h1>
-</div>
-<div class = "ash">
-  <h2>{{name}}</h2>
-  <h2>{{email}}</h2>
-</div>
 
 
 <div >
@@ -19,6 +12,10 @@
 </div>
 
 <div class="black">
-  <h1>{{title}}</h1>
+  <h1> {{ title }} </h1>
 </div>
 
+<div class = "ash" *ngFor="let post of posts">
+  <h2> {{ post.title }}</h2>
+  <h2> {{ post.body }}</h2>
+</div>

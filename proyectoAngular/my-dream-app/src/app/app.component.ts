@@ -14,7 +14,7 @@ export class AppComponent {
   users = ["ryan", "joe", "cameron", "jhon"];
   activated = false;
 
-  title = 'my-dream-app';
+  title = 'my-dream-app';/*
   name : string;
   email;
   webpage : string;
@@ -41,7 +41,7 @@ export class AppComponent {
     hobby.value="";
     return false;
   }
-
+*/
   sayHello() {
     alert("Hola desde app.component.ts");
   }
@@ -53,15 +53,24 @@ export class AppComponent {
       }
     }
   }
+
+  
   addUser(newUser: { value: string; focus: () => void; }){
     this.users.push(newUser.value);
     newUser.value="";
     newUser.focus();
     return false;
     
-  } 
+  }  
 
 
+  posts:any;
+  constructor(private dataService: DataService){
+    this.dataService.getData().subscribe(data =>{
+      console.log(data);
+      this.posts = data;
+    });
+  }
 
 }
 
