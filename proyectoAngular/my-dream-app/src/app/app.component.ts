@@ -63,10 +63,9 @@ export class AppComponent {
 
   posts = [];
   
-  /* constructor(private dataService: DataService) {
+  /*constructor(private dataService: DataService) {
     this.dataService.getData().subscribe(data=>{
       //console.log(data);
-      
     });
   }  */
 

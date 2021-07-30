@@ -10,12 +10,16 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserComponent } from './user/user.component';
 
 import { DataService } from './data.service';
+import { AboutComponent } from './about/about.component';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    UserComponent
+    UserComponent,
+    AboutComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
