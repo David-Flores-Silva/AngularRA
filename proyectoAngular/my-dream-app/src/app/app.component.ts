@@ -7,7 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-dream-app';
-  name = "David Flores Silva";
-  email = "dfloressi@unsa.edu.pe";
-  webpage = "https://www.unsa.edu.pe/";
+  name : string;
+  email;
+  webpage : string;
+  hobbys : string[];
+  showHobbies : boolean;
+
+  constructor(){
+    console.log("constructor warning...");
+    this.name = "David Flores Silva";
+    this.email = "dfloressi@unsa.edu.pe";
+    this.webpage = "https://www.unsa.edu.pe/";
+    this.hobbys = ["futbol", "tenis", "pin-pon"];
+    this.showHobbies = false;
+  }
+
+
+  toggleHobbies(){
+    this.showHobbies = !this.showHobbies;
+  }
 }

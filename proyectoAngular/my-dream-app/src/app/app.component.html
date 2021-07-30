@@ -6,5 +6,17 @@
 <div class = "ash">
   <h2>{{name}}</h2>
   <h2>{{email}}</h2>
-  <h2>{{webpage}}</h2>
+
+  <button (click)="toggleHobbies()" class = "bnt"> Mostrar hobbies </button>
+  <div *ngIf="showHobbies" class="component2">
+    <h3>hobbies:</h3>
+    <ul>
+      <li *ngFor = "let hobby of hobbys"> {{hobby}} </li>
+    </ul>
+  </div>
+  <a href="{{webpage}}" target="_blank">Visite mi sitio web</a>
+</div>
+
+<div class="black">
+  <h1>{{title}}</h1>
 </div>
