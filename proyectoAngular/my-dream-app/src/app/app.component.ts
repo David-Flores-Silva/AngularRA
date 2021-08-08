@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name2 : string = "David Flores Silva";
   age : number = 23;
-  gamers = ["Mario Bros", "Kin Kon", "pin-pon", "pack-man"];
+  gamers = ["Mario Bros", "Donkey Kong", "pin-pon", "pac-man"];
   activated = false;
 
   title = 'my-dream-app';/*

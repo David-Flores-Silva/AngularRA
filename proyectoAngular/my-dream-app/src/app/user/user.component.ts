@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpEventType } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Subscriber, Subscription } from 'rxjs';
 
 
 @Component({
@@ -6,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
+
 export class UserComponent implements OnInit {
   @Input() nameGamers: any;
 
@@ -14,34 +19,20 @@ export class UserComponent implements OnInit {
 
   name : string = "David Flores Silva";
   age : number = 18;
-  title = 'my-dream-app';
   gamers = ["Mario Bros", "Kin Kon", "pin-pon", "pack-man"];
 
+  imagen : File | undefined;
   namee : string;
   tamanio : string;
-  fecha : number=1998;
-  showGamers : boolean;
+  fecha : Date | undefined;
 
-  constructor(){
+  constructor(private http: HttpClient){
     console.log("constructor warning...");
+    this.imagen;
     this.namee = "Juego#";
     this.tamanio = "4 Mb";
-    this.fecha = 1989;
-    this.showGamers = false;
+    this.fecha;
   }
-  
-
-  toggleHobbies(){
-    this.showGamers = !this.showGamers;
-  }
-
-  newHobby(hobby: { value: string; }){
-    //console.log(hobby.value);
-    this.gamers.push(hobby.value);
-    hobby.value="";
-    return false;
-  }
-
 
 
   deleteUser(user: string){
@@ -58,8 +49,9 @@ export class UserComponent implements OnInit {
     newUser.value="";
     newUser.focus();
     return false;
-    
   }  
+
   
+
 
 }

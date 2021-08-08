@@ -14,7 +14,9 @@ import { AboutComponent } from './about/about.component';
 import { HelloComponent } from './hello/hello.component';
 
 
+
 const routes: Route[] = [
+  {path: "user", component: UserComponent },
   {path: "helloWorld", component: HelloWorldComponent },
   {path: "about", component: AboutComponent },
   {path: "hello", component: HelloComponent },
