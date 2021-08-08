@@ -12,7 +12,4 @@ export class DataService {
     console.log("Service working...")
   }
 
-  getData(){
-    return this.httpClient.get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-  }
 }
