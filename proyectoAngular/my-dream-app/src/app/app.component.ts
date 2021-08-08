@@ -10,8 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name2 : string = "David Flores Silva";
   age : number = 23;
-
-  users = ["ryan", "joe", "cameron", "jhon"];
+  gamers = ["Mario Bros", "Kin Kon", "pin-pon", "pack-man"];
   activated = false;
 
   title = 'my-dream-app';/*
@@ -47,16 +46,16 @@ export class AppComponent {
   }
 
   deleteUser(user: string){
-    for(let i=0; i<this.users.length; i++){
-      if (user == (this.users[i])){
-        this.users.splice(i,1);
+    for(let i=0; i<this.gamers.length; i++){
+      if (user == (this.gamers[i])){
+        this.gamers.splice(i,1);
       }
     }
   }
 
   
   addUser(newUser: { value: string; focus: () => void; }){
-    this.users.push(newUser.value);
+    this.gamers.push(newUser.value);
     newUser.value="";
     newUser.focus();
     return false;
