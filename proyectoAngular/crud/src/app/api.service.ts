@@ -18,5 +18,16 @@ export class ApiService {
   getOneMovie(id:any):Observable<any>{
     return this.http.get(this.baseurl+'/movie/'+id+"/", {headers: this.httpHeaders});
   }
+  updateMovie(movie:any):Observable<any>{
+    const body = {title:movie.title, desc:movie.desc, year:movie.year};
+    return this.http.put(this.baseurl+'/movie/'+movie.id+"/", body, {headers: this.httpHeaders});
+  }
+  createMovie(movie:any):Observable<any>{
+    const body = {title:movie.title, desc:movie.desc, year:movie.year};
+    return this.http.post(this.baseurl+'/movie/', body, {headers: this.httpHeaders});
+  }
+  deleteMovie(movie:any):Observable<any>{
+    return this.http.delete(this.baseurl+'/movie/'+movie.id+"/", {headers: this.httpHeaders});
+  }
 }
 

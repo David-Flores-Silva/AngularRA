@@ -8,8 +8,10 @@
 
 
 
-Title <input type="text" [(ngModel)]="title"><br>
-desc <input type="text" [(ngModel)]="desc"><br>
-year <input type="number" [(ngModel)]="year"><br>
+Title <input type="text" [(ngModel)]="selectionMovie.title"><br>
+desc <input type="text" [(ngModel)]="selectionMovie.desc"><br>
+year <input type="number" [(ngModel)]="selectionMovie.year"><br>
 
 <button (click)="UpdateMovie()"> PUT </button>
+<button (click)="CreateMovie()"> CREATE </button>
+<button (click)="DeleteMovie()"> DELETE </button>

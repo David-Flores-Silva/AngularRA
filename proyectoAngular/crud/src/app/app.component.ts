@@ -10,13 +10,12 @@ import { ApiService } from './api.service';
 })
 
 export class AppComponent {
-  peliculas : any;
-  title:any;
-  desc:any;
-  year:any;
+  peliculas:any;
+  selectionMovie:any;
 
   constructor(private api:ApiService) {
     this.getMovies();
+    this.selectionMovie = {id:-1, title:"", desc:"", year:0}
   }
   
   getMovies = () => {
@@ -34,9 +33,7 @@ export class AppComponent {
   movieClicked = (movie:any) => { 
     this.api.getOneMovie(movie.id).subscribe(
       data => {
-        this.title = data.title;
-        this.desc = data.desc;
-        this.year = data.year;
+        this.selectionMovie = data;
       },
       error => {
         console.log(error);
@@ -44,22 +41,38 @@ export class AppComponent {
     );
   }
 
-
-  addMovie(newMovie: any){
-    this.peliculas = (newMovie);
-    newMovie.value = "";
-    newMovie.focus();
-    return false;
+  UpdateMovie = () => {
+    this.api.updateMovie(this.selectionMovie).subscribe(
+      data => {
+        this.getMovies();
+      },
+      error => {
+        console.log(error);
+      } 
+    );
   }
 
-  deleteMovie(movie:any){
-    for(var i=0; i<this.peliculas.length; i++){
-      if(movie==this.peliculas[i]){
-        this.peliculas.splice(i,1)
-      }
-    }
+  CreateMovie = () => {
+    this.api.createMovie(this.selectionMovie).subscribe(
+      data => {
+        this.peliculas.push(data);
+      },
+      error => {
+        console.log(error);
+      } 
+    );
   }
 
+  DeleteMovie = () => {
+    this.api.deleteMovie(this.selectionMovie).subscribe(
+      data => {
+        this.getMovies();
+      },
+      error => {
+        console.log(error);
+      } 
+    );
+  }
 }
 
 
