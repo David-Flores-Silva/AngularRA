@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from api import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 router = routers.DefaultRouter()
 router.register('movie', views.MovieViewSet)
@@ -28,4 +31,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('movie/', include("api.urls")),
 ]
+
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, documents_root=settings.MEDIA_ROOT)
 

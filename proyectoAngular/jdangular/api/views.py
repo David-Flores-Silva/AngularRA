@@ -40,6 +40,7 @@ class MovieCreateView(CreateView):
         "title",
         "desc",
         "year",
+        "img",
     ]
 
 class MovieUpdateView(UpdateView):
