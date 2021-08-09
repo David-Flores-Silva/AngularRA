@@ -1,17 +1,121 @@
 <!--Mi lista aqui va -->
-  <h2>Lista de Movies:</h2>
-  <ul>
-    <li *ngFor="let movie of peliculas">
-      <h2 (click)="movieClicked(movie)"> {{ movie.title }} - {{ movie.year }} </h2>
+
+    <li *ngFor="let movie of peliculas" style="font-size:0%">
+      <h2 (click)="movieClicked(movie)" style="font-size:0%">  {{ movie.title }} - {{ movie.year }} </h2>
     </li>
-  </ul>
+  
+
+<router-outlet></router-outlet>
+
+<nav class="navbar navbar-expand-lg" style="background-color: black">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost:4200/" style="color:white;">Drakx</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://localhost:4200/" style="color:white;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:white;">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color:white;">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Album example</h1>
+        <p class="lead text-muted">Este servicio en línea de pago les permite a los propietarios de una consola Nintendo Switch disfrutar de la experiencia multijugador y mucho más. Puedes adquirir una suscripción de pago para Nintendo Switch Online a través de Tienda Nintendo.</p>
+        <p>
+          <a href="#" class="btn btn-danger my-2">Agregar Juego</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<main class="form-signin">
+    <h1 class="h3 mb-3 fw-normal">CREATE MOVIE</h1>
+    <div class="form-floating">
+      <input type="text" [(ngModel)]="selectionMovie.title" class="form-control" id="floatingInput" placeholder="Title">
+      <label for="floatingInput">title</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" [(ngModel)]="selectionMovie.desc" class="form-control" id="floatingPassword" placeholder="Descripcion">
+      <label for="floatingPassword">decription</label>
+    </div>
+    <div class="form-floating">
+      <input type="number" [(ngModel)]="selectionMovie.year" class="form-control" id="floatingPassword" placeholder="Year">
+      <label for="floatingPassword">year</label>
+    </div>
+    <button (click)="CreateMovie()" class="w-100 btn btn-lg btn-primary" type="submit">Save</button>
+</main>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col"  *ngFor="let movie of peliculas">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
+              <div class="card-body">
+                <p class="card-text"></p>
+                <h2 (click)="movieClicked(movie)"> {{ movie.title }} - {{ movie.year }} </h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button (click)="UpdateMovie()" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button (click)="DeleteMovie()" class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</main>
 
 
 
-Title <input type="text" [(ngModel)]="selectionMovie.title"><br>
-desc <input type="text" [(ngModel)]="selectionMovie.desc"><br>
-year <input type="number" [(ngModel)]="selectionMovie.year"><br>
+<footer class="text-muted py-5" style="background-color:black;">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#" style="color:white;">Back to top</a>
+    </p>
+    <p class="mb-1" style="color:gray;">Album example is Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0" style="color:gray;">New to Bootstrap? <a href="/" style="color:white;">Visit the homepage</a> or read our <a href="/docs/5.1/getting-started/introduction/" style="color:white;">getting started guide</a>.</p>
+  </div>
+</footer>
 
-<button (click)="UpdateMovie()"> PUT </button>
-<button (click)="CreateMovie()"> CREATE </button>
-<button (click)="DeleteMovie()"> DELETE </button>
+
+<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+      
+
