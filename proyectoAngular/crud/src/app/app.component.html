@@ -1,7 +1,15 @@
 <!--Mi lista aqui va -->
   <h2>Lista de Movies:</h2>
   <ul>
-    <li *ngFor="let movie of movies">
-      <h2> {{movie.id }}. {{ movie.title }}: {{ movie.desc }}. {{ movie.year }}</h2>
+    <li *ngFor="let movie of peliculas">
+      <h2 (click)="movieClicked(movie)"> {{ movie.title }} - {{ movie.year }} </h2>
     </li>
   </ul>
+
+
+
+Title <input type="text" [(ngModel)]="title"><br>
+desc <input type="text" [(ngModel)]="desc"><br>
+year <input type="number" [(ngModel)]="year"><br>
+
+<button (click)="UpdateMovie()"> PUT </button>
